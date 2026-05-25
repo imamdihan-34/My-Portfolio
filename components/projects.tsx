@@ -9,10 +9,10 @@ import Image from "next/image"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "MediQueue Teaching Platform",
     description:
-      "A full-stack e-commerce solution with user authentication, product management, shopping cart, and payment integration using Stripe.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      "A modern tutor booking platform where students can explore tutors, book learning sessions, and manage their scheduled classes efficiently",
+    image: "https://i.ibb.co.com/Qjz75DY9/93b6ee4c-84db-4c44-8651-dfeb3a0a9492.png",
     tags: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
     github: "https://github.com",
     live: "https://example.com",

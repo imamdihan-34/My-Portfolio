@@ -13,26 +13,26 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "john.doe@example.com",
-    href: "mailto:john.doe@example.com",
+    value: "imamdihan@gmail.com",
+    href: "mailto:imamdihan@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
+    value: "+880 1813 - 3309755",
     href: "tel:+15551234567",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
+    value: "Feni, Bangladesh",
     href: null,
   },
 ]
 
 const socialLinks = [
-  { icon: Github, label: "GitHub", href: "https://github.com" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
+  { icon: Github, label: "GitHub", href: "https://github.com/imamdihan-34" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/imam-dihan/" },
   { icon: Twitter, label: "Twitter", href: "https://twitter.com" },
 ]
 

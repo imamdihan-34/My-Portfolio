@@ -77,7 +77,7 @@ export function Navbar() {
                 <Github className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="www.linkedin.com/in/imam-dihan"
+                href="https://www.linkedin.com/in/imam-dihan/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
@@ -133,7 +133,7 @@ export function Navbar() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="www.linkedin.com/in/imam-dihan"
+                  href="https://www.linkedin.com/in/imam-dihan/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-lg glass-card hover:bg-primary/10 transition-colors"

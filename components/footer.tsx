@@ -14,10 +14,10 @@ const footerLinks = [
 ]
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/imamdihan-34", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/imam-dihan/", label: "LinkedIn" },
   { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:john.doe@example.com", label: "Email" },
+  { icon: Mail, href: "mailto:imamdihan@gmail.com", label: "Email" },
 ]
 
 export function Footer() {
@@ -87,7 +87,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-border/50">
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            © {new Date().getFullYear()} John Doe. Built with{" "}
+            © {new Date().getFullYear()} Imam Hassan. Built with{" "}
             <Heart className="w-4 h-4 text-red-500 fill-red-500" /> using Next.js
           </p>
 
