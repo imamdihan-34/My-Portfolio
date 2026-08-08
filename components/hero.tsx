@@ -5,13 +5,14 @@ import { motion } from "framer-motion"
 import { ArrowDown, Download, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { SiReact, SiNextdotjs, SiMongodb } from "react-icons/si"
 
 const roles = [
+  "Frontend Developer",
   "MERN Stack Developer",
-  "Full Stack Engineer",
   "React Developer",
-  "Node.js Developer",
-  "UI/UX Enthusiast",
+  "Next.js Developer",
+ 
 ]
 
 export function Hero() {
@@ -84,7 +85,7 @@ export function Hero() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-balance"
             >
               Hi, I&apos;m{" "}
-              <span className="gradient-text">Imam Hassan</span>
+              <span className="gradient-text">Md Imam Hassan Dihan</span>
             </motion.h1>
 
             <motion.div
@@ -103,8 +104,9 @@ export function Hero() {
               transition={{ delay: 0.5 }}
               className="text-muted-foreground text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
             >
-              I craft exceptional digital experiences with modern web technologies.
-              Passionate about building scalable applications and clean, efficient code.
+              I build fast, accessible, and visually polished interfaces with
+              React and Next.js — backed by hands-on experience across the
+              MERN stack when a project needs the full picture.
             </motion.p>
 
             <motion.div
@@ -124,16 +126,19 @@ export function Hero() {
                 </a>
               </Button>
               <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="glass-card border-primary/30 hover:bg-primary/10"
-              >
-                <a href="/public/Imam_Hassan_Resume (1).pdf" download>
-                  <Download className="mr-2 w-5 h-5" />
-                  Download CV
-                </a>
-              </Button>
+  asChild
+  variant="outline"
+  size="lg"
+  className="glass-card border-primary/30 hover:bg-primary/10"
+>
+  <a
+    href="/dihan.pdf"
+    download="Imam-Dihan-Resume.pdf"
+  >
+    <Download className="mr-2 w-5 h-5" />
+    Download CV
+  </a>
+</Button>
             </motion.div>
           </motion.div>
 
@@ -147,13 +152,13 @@ export function Hero() {
             <div className="relative">
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-3xl opacity-30 scale-110" />
-              
+
               {/* Image Container */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden gradient-border p-1">
+              <div className="relative w-64 h-80 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden gradient-border p-1">
                 <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-purple-900/50 to-blue-900/50 flex items-center justify-center">
                   <Image
-                    src="https://i.ibb.co.com/9mtbP0cY/Untitled-2.jpg"
-                    alt="Imam Hassan"
+                    src="/pic.jpeg"
+                    alt="Md Imam Hassan Dihan"
                     width={400}
                     height={400}
                     className="w-full h-full object-cover"
@@ -166,23 +171,26 @@ export function Hero() {
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -top-4 -right-4 px-4 py-2 rounded-xl glass-card text-sm font-medium"
+                className="absolute -top-4 -right-4 flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-sm font-medium"
               >
-                ⚛️ React
+                <SiReact className="w-4 h-4 text-cyan-400" />
+                React
               </motion.div>
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
-                className="absolute -bottom-4 -left-4 px-4 py-2 rounded-xl glass-card text-sm font-medium"
+                className="absolute -bottom-4 -left-4 flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-sm font-medium"
               >
-                🚀 Next.js
+                <SiNextdotjs className="w-4 h-4" />
+                Next.js
               </motion.div>
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                className="absolute top-1/2 -right-8 px-4 py-2 rounded-xl glass-card text-sm font-medium"
+                className="absolute top-1/2 -right-8 flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-sm font-medium"
               >
-                🍃 MongoDB
+                <SiMongodb className="w-4 h-4 text-green-500" />
+                MongoDB
               </motion.div>
             </div>
           </motion.div>

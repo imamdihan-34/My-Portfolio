@@ -3,11 +3,13 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react"
+import { Send, Mail, MapPin, Phone, Github, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+
+const WEB3FORMS_ACCESS_KEY = "8bf52401-31f8-4525-828f-d71cdd85ccfb"
 
 const contactInfo = [
   {
@@ -19,8 +21,8 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+880 1813 - 3309755",
-    href: "tel:+15551234567",
+    value: "+880 1813-309755",
+    href: "tel:+8801813309755",
   },
   {
     icon: MapPin,
@@ -32,8 +34,7 @@ const contactInfo = [
 
 const socialLinks = [
   { icon: Github, label: "GitHub", href: "https://github.com/imamdihan-34" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/imam-dihan/" },
-  { icon: Twitter, label: "Twitter", href: "https://twitter.com" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/imam-dihan" },
 ]
 
 export function Contact() {
@@ -41,17 +42,50 @@ export function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const submitLock = useRef(false) // hard guard against double submits
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    if (submitLock.current) return // ignore if a request is already in flight
+    submitLock.current = true
+
+    setError(null)
+    setIsSubmitted(false)
     setIsSubmitting(true)
-    
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    setTimeout(() => setIsSubmitted(false), 3000)
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY)
+    formData.append(
+      "subject",
+      `New portfolio message: ${formData.get("subject") || "No subject"}`
+    )
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+      const result = await res.json()
+
+      if (result.success) {
+        setIsSubmitted(true)
+        setError(null)
+        form.reset()
+        setTimeout(() => setIsSubmitted(false), 3000)
+      } else {
+        setIsSubmitted(false)
+        setError(result.message || "Something went wrong. Please try again or email me directly.")
+      }
+    } catch {
+      setIsSubmitted(false)
+      setError("Network error — please check your connection and try again.")
+    } finally {
+      setIsSubmitting(false)
+      submitLock.current = false
+    }
   }
 
   return (
@@ -150,11 +184,15 @@ export function Contact() {
               onSubmit={handleSubmit}
               className="p-8 rounded-2xl glass-card space-y-6"
             >
+              {/* Honeypot field to reduce spam — keep hidden from real users */}
+              <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
                   <Input
                     id="name"
+                    name="name"
                     placeholder="Your name"
                     required
                     className="bg-background/50 border-border/50 focus:border-primary"
@@ -164,6 +202,7 @@ export function Contact() {
                   <Label htmlFor="email">Email</Label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     placeholder="your@email.com"
                     required
@@ -176,6 +215,7 @@ export function Contact() {
                 <Label htmlFor="subject">Subject</Label>
                 <Input
                   id="subject"
+                  name="subject"
                   placeholder="What's this about?"
                   required
                   className="bg-background/50 border-border/50 focus:border-primary"
@@ -186,12 +226,17 @@ export function Contact() {
                 <Label htmlFor="message">Message</Label>
                 <Textarea
                   id="message"
+                  name="message"
                   placeholder="Tell me about your project..."
                   rows={5}
                   required
                   className="bg-background/50 border-border/50 focus:border-primary resize-none"
                 />
               </div>
+
+              {error && (
+                <p className="text-sm text-red-500">{error}</p>
+              )}
 
               <Button
                 type="submit"

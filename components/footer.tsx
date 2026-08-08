@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Heart, Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react"
+import { Heart, Github, Linkedin, Mail, ArrowUp } from "lucide-react"
 import Link from "next/link"
 
 const footerLinks = [
@@ -9,14 +9,13 @@ const footerLinks = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
+ 
   { name: "Contact", href: "#contact" },
 ]
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/imamdihan-34", label: "GitHub" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/imam-dihan/", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/imam-dihan", label: "LinkedIn" },
   { icon: Mail, href: "mailto:imamdihan@gmail.com", label: "Email" },
 ]
 
@@ -35,11 +34,11 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="#home" className="text-2xl font-bold gradient-text">
-              John Doe
+              Md Imam Hassan Dihan
             </Link>
             <p className="text-muted-foreground max-w-xs">
-              MERN Stack Developer crafting exceptional digital experiences with
-              modern web technologies.
+              Frontend Developer crafting clean, responsive interfaces with
+              React and Next.js — backed by hands-on MERN stack experience.
             </p>
           </div>
 
@@ -87,8 +86,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-border/50">
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            © {new Date().getFullYear()} Imam Hassan. Built with{" "}
-            <Heart className="w-4 h-4 text-red-500 fill-red-500" /> using Next.js
+            © {new Date().getFullYear()} Md Imam Hassan Dihan
           </p>
 
           {/* Back to Top */}

@@ -7,27 +7,27 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'John Doe | MERN Stack Developer',
-  description: 'Full-stack developer specializing in React, Next.js, Node.js, Express, and MongoDB. Available for internships and remote opportunities.',
-  keywords: ['MERN Stack', 'React', 'Next.js', 'Node.js', 'MongoDB', 'Full Stack Developer', 'Web Developer'],
-  authors: [{ name: 'John Doe' }],
+  title: 'Md Imam Hassan Dihan | Frontend Developer',
+  description: 'Frontend developer specializing in React and Next.js, with hands-on experience across the MERN stack (Node.js, Express, MongoDB). Available for internships and remote opportunities.',
+  keywords: ['Frontend Developer', 'React Developer', 'Next.js Developer', 'MERN Stack', 'React', 'Next.js', 'Node.js', 'MongoDB', 'Web Developer'],
+  authors: [{ name: 'Md Imam Hassan Dihan' }],
   openGraph: {
-    title: 'John Doe | MERN Stack Developer',
-    description: 'Full-stack developer specializing in React, Next.js, Node.js, Express, and MongoDB.',
+    title: 'Md Imam Hassan Dihan | Frontend Developer',
+    description: 'Frontend developer specializing in React and Next.js, with hands-on experience across the MERN stack.',
     type: 'website',
   },
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/fab-icon.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/fab-icon.png',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: '/fab-icon.png',
         type: 'image/svg+xml',
       },
     ],

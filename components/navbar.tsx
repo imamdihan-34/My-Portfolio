@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Github, Linkedin } from "lucide-react"
+import { Menu, X, Github, Linkedin, Facebook } from "lucide-react"
 import Link from "next/link"
 
 const navItems = [
@@ -10,7 +10,7 @@ const navItems = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
+ 
   { name: "Contact", href: "#contact" },
 ]
 
@@ -77,13 +77,22 @@ export function Navbar() {
                 <Github className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="https://www.linkedin.com/in/imam-dihan/"
+                href="https://www.linkedin.com/in/imam-dihan"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="p-2 rounded-lg glass-card hover:bg-primary/10 transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
+              </motion.a>
+              <motion.a
+                href="https://www.facebook.com/imam.hassan.dihan"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="p-2 rounded-lg glass-card hover:bg-primary/10 transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
               </motion.a>
             </div>
 
@@ -97,7 +106,7 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -133,12 +142,20 @@ export function Navbar() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/imam-dihan/"
+                  href="https://www.linkedin.com/in/imam-dihan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-lg glass-card hover:bg-primary/10 transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
+                </a>
+                  <a
+                  href="https://www.facebook.com/imam.hassan.dihan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg glass-card hover:bg-primary/10 transition-colors"
+                >
+                  <Facebook className="w-5 h-5" />
                 </a>
               </div>
             </div>

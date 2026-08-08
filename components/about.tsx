@@ -60,28 +60,31 @@ export function About() {
             className="space-y-6"
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I&apos;m a passionate <span className="text-foreground font-medium">MERN Stack Developer</span> with 
-              a strong foundation in building modern web applications. Currently pursuing 
-              opportunities in tech, I specialize in creating seamless user experiences 
-              with cutting-edge technologies.
+              I&apos;m a <span className="text-foreground font-medium">Frontend Developer</span> with
+              hands-on experience across the MERN stack. I enjoy turning ideas into
+              clean, responsive interfaces with React and Next.js, and I&apos;m comfortable
+              working with the backend — Node.js, Express, and MongoDB — when a project
+              needs the full picture.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              My journey in web development started with curiosity about how things work 
-              on the internet. Since then, I&apos;ve been dedicated to learning and implementing 
-              best practices in full-stack development, from crafting responsive frontends 
-              to designing robust backend architectures.
+              My journey in web development started with curiosity about how things work
+              on the internet. Since then, I&apos;ve been dedicated to learning and implementing
+              best practices in modern frontend development, from crafting responsive UIs
+              to understanding the backend systems that power them.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              When I&apos;m not coding, you can find me exploring new technologies, contributing 
-              to open-source projects, or sharing knowledge with the developer community. 
-              I believe in continuous learning and pushing the boundaries of what&apos;s possible 
-              with code.
+              I&apos;m always eager to learn new tools, frameworks, and ways of solving
+              problems — and just as eager to put that learning to work on real projects.
+              When I&apos;m not coding, you can find me exploring new technologies,
+              contributing to open-source projects, or sharing knowledge with the
+              developer community. I believe growth comes from staying curious and
+              taking on challenges that push me a little further each time.
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-6">
               {[
-                { value: "2+", label: "Years Experience" },
+                { value: "1+", label: "Years Experience" },
                 { value: "15+", label: "Projects Completed" },
                 { value: "10+", label: "Technologies" },
               ].map((stat, index) => (
