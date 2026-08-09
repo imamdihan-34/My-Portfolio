@@ -157,7 +157,7 @@ export function Hero() {
               <div className="relative w-64 h-80 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden gradient-border p-1">
                 <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-purple-900/50 to-blue-900/50 flex items-center justify-center">
                   <Image
-                    src="/pic.jpeg"
+                    src="/profile-pic.png"
                     alt="Md Imam Hassan Dihan"
                     width={400}
                     height={400}
